@@ -22,7 +22,7 @@ def check_token():
     invalid_tokens_count = 0
 
     for cache in _utils.caches:
-        response = requests.get(f'https://discord.com/api/v9/users/@me/survey', headers=cache['headers'], proxies=cache['proxy'])
+        response = requests.get(f'https://discord.com/api/v10/users/@me/survey', headers=cache['headers'], proxies=cache['proxy'])
         #response = requests.get(f'https://discord.com/api/v9/users/@me/billing/country-code', headers=cache['headers'], proxies=cache['proxy'])
         print(response.status_code, response.text)
         if response.status_code == 200:
