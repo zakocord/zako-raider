@@ -1,4 +1,4 @@
-# RaizouRaider
+# RaizouRaider めんどくさいので中止
 
 ![Screenshot1](https://raw.githubusercontent.com/raizou-zap/raider/main/screenshots/screenshot1.png)
 ![Screenshot2](https://raw.githubusercontent.com/raizou-zap/raider/main/screenshots/screenshot2.png)
