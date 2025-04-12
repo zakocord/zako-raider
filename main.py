@@ -9,14 +9,14 @@ from PIL import ImageTk, Image
 from modules import _utils
 from modules import _config
 from tkinter import messagebox
-
+## テストしてません
 modules = []
 for module in sys.modules:
     if module.startswith('modules.'):
         if module not in ['modules._config', 'modules._utils']:
             modules.append(sys.modules[module])
 
-version = '2.4'
+version = '3.4'
 
 if not os.path.isfile('./data/config.json'):
     messagebox.showerror('Error', message='config.jsonが見つかりません。\ndata/config.jsonを設定してください')
