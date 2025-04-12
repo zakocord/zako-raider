@@ -22,9 +22,9 @@ def spam(cache, guild_id, channel_list, content, reply_message_id, typing, conve
     if reply_message_id != '':
         request_data['message_reference'] = {'guild_id':guild_id,'channel_id':channel_id,'message_id':reply_message_id}
     if typing:
-        response = requests.post(f'https://discord.com/api/v9/channels/{channel_id}/typing', headers=cache['headers'], proxies=cache['proxy'])
+        response = requests.post(f'https://discord.com/api/v10/channels/{channel_id}/typing', headers=cache['headers'], proxies=cache['proxy'])
         print(response.status_code, response.text)
-    response = requests.post(f'https://discord.com/api/v9/channels/{channel_id}/messages', headers=cache['headers'], proxies=cache['proxy'], json=request_data)
+    response = requests.post(f'https://discord.com/api/v10/channels/{channel_id}/messages', headers=cache['headers'], proxies=cache['proxy'], json=request_data)
     print(response.status_code, response.text)
 
 def start(guild_id, channel_id, content, reply_message_id, all_channels, typing, convert):
@@ -35,7 +35,7 @@ def start(guild_id, channel_id, content, reply_message_id, all_channels, typing,
     channel_list = []
     if all_channels:
         if guild_id != '':
-            response = requests.get(f'https://discord.com/api/v9/guilds/{guild_id}/channels', headers=_utils.caches[0]['headers'], proxies=_utils.caches[0]['proxy'])
+            response = requests.get(f'https://discord.com/api/v10/guilds/{guild_id}/channels', headers=_utils.caches[0]['headers'], proxies=_utils.caches[0]['proxy'])
             print(response.status_code, response.text)
             for channel in response.json():
                 if channel['type'] == 0:
@@ -139,6 +139,6 @@ def draw_module(module_frame):
     tkinter.Button(master=module_frame, text='Stop', width=10, foreground='#ffffff', background='#2c2f33', command=stop).pack()
 
 module = {
-    'name':'Channel Spammer',
+    'name':'Channel Spammer v10',
     'description':'テキストチャンネルにスパムします'
 }
